@@ -22,6 +22,3 @@ jobs:
 
       - name: SCA — pip-audit
         run: pip-audit
-
-
-

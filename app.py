@@ -14,6 +14,5 @@ def get_user(username):
 def run_cmd(user_input):
     # BAD: Shell injection
     subprocess.call(
-         'ls ' + user_input,
+        'ls ' + user_input,
         shell=True)
-    
