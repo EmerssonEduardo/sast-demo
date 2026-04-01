@@ -1,4 +1,4 @@
-import subprocess, sqlite3
+import sqlite3
 
 # BAD: Hardcoded credentials
 DB_PASSWORD = "admin123"
@@ -11,8 +11,8 @@ def get_user(username):
     q += f" WHERE u='{username}'"
     return conn.execute(q).fetchall()
 
-def run_cmd(user_input):
-    # BAD: Shell injection
-    subprocess.call(
-        'ls ' + user_input,
-        shell=True)
+    def run_cmd(user_input):
+        # BAD: Shell injection
+        subprocess.call(
+            'ls ' + user_input,
+            shell=True)
