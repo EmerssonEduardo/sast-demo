@@ -1,4 +1,4 @@
-import sqlite3
+import subprocess, sqlite3
 
 # BAD: Hardcoded credentials
 DB_PASSWORD = "admin123"
