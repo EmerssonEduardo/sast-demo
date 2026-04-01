@@ -1,0 +1,27 @@
+name: Security Scan
+
+on: [push, pull_request]
+
+jobs:
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install tools
+        run: |
+          pip install bandit pip-audit
+
+      - name: SAST — Bandit
+        run: bandit -r . -f txt
+
+      - name: SCA — pip-audit
+        run: pip-audit
+
+
+
